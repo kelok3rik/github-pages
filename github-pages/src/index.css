@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white font-poppins;
+}
+
+.bg-gradient-dark {
+  @apply bg-gradient-to-b from-black via-black to-gray-800;
+}
+
+.bg-gradient-light {
+  @apply bg-gradient-to-b from-white via-gray-100 to-gray-200;
+}

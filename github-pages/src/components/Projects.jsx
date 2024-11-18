@@ -1,144 +1,52 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Slider from 'react-slick';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import BirdTrackerPortada from "../assets/BirdTrackeProyect.png";
 
 const Projects = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
-  const githubBaseURL = 'https://github.com/yourusername';
   const projects = [
     {
       id: 1,
-      src: 'https://i.imgur.com/Ay4q5Aq.png',
-      demo: 'https://i.imgur.com/Ay4q5Aq.png',
-      code: `${githubBaseURL}/birdtracker-project`,
-      description: 'Descripción breve del primer proyecto.'
+      src: BirdTrackerPortada,
+      title: t.project1Title,
+      description: t.project1Description,
+      demo: 'https://yourproject1.com',
+      code: ''
     },
     {
       id: 2,
-      src: 'https://i.imgur.com/Ay4q5Aq.png',
+      src: BirdTrackerPortada,
+      title: t.project2Title,
+      description: t.project2Description,
       demo: 'https://yourproject2.com',
-      code: `${githubBaseURL}/project2`,
-      description: 'Descripción breve del segundo proyecto.'
+      code: 'https://github.com/yourusername/project2'
     },
     {
       id: 3,
-      src: 'https://i.imgur.com/ad3qrQf.png',
+      src: BirdTrackerPortada,
+      title: t.project3Title,
+      description: t.project3Description,
       demo: 'https://yourproject3.com',
-      code: `${githubBaseURL}/project3`,
-      description: 'Descripción breve del tercer proyecto.'
+      code: 'https://github.com/yourusername/project3'
     },
     {
       id: 4,
-      src: 'https://i.imgur.com/Ay4q5Aq.png',
+      src: BirdTrackerPortada,
+      title: t.project4Title,
+      description: t.project4Description,
       demo: 'https://yourproject4.com',
-      code: `${githubBaseURL}/project4`,
-      description: 'Descripción breve del cuarto proyecto.'
-    },
-    {
-      id: 5,
-      src: 'https://i.imgur.com/xyz1234.png',
-      demo: 'https://yourproject5.com',
-      code: `${githubBaseURL}/project5`,
-      description: 'Descripción breve del quinto proyecto.'
-    },
-    {
-      id: 6,
-      src: 'https://i.imgur.com/xyz5678.png',
-      demo: 'https://yourproject6.com',
-      code: `${githubBaseURL}/project6`,
-      description: 'Descripción breve del sexto proyecto.'
-    },
-    {
-      id: 7,
-      src: 'https://i.imgur.com/xyz9101.png',
-      demo: 'https://yourproject7.com',
-      code: `${githubBaseURL}/project7`,
-      description: 'Descripción breve del séptimo proyecto.'
-    },
-    {
-      id: 8,
-      src: 'https://i.imgur.com/xyz1121.png',
-      demo: 'https://yourproject8.com',
-      code: `${githubBaseURL}/project8`,
-      description: 'Descripción breve del octavo proyecto.'
-    },
-    {
-      id: 9,
-      src: 'https://i.imgur.com/xyz3141.png',
-      demo: 'https://yourproject9.com',
-      code: `${githubBaseURL}/project9`,
-      description: 'Descripción breve del noveno proyecto.'
-    },
-    {
-      id: 10,
-      src: 'https://i.imgur.com/xyz4151.png',
-      demo: 'https://yourproject10.com',
-      code: `${githubBaseURL}/project10`,
-      description: 'Descripción breve del décimo proyecto.'
-    },
+      code: 'https://github.com/yourusername/project3'
+    }
   ];
 
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute top-1/2 left-[-50px] transform -translate-y-1/2 cursor-pointer text-black dark:text-white z-10"
-        onClick={onClick}
-      >
-        <FaChevronLeft className="text-4xl" />
-      </div>
-    );
-  };
-
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute top-1/2 right-[-50px] transform -translate-y-1/2 cursor-pointer text-black dark:text-white z-10"
-        onClick={onClick}
-      >
-        <FaChevronRight className="text-4xl" />
-      </div>
-    );
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    
-    arrows: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <div name="projects" className="bg-gradient-to-b from-white to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full text-gray-900 dark:text-white md:h-screen">
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full relative">
+    <div name="projects" className="bg-gradient-to-b from-white to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full text-gray-900 dark:text-white py-16">
+      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,45 +59,68 @@ const Projects = () => {
           <p className="py-6">{t.projectsIntro}</p>
         </motion.div>
 
-        <Slider {...settings}>
-          {projects.map(({ id, src, demo, code, description }) => (
+        {/* Ajuste para 2 tarjetas en pantallas grandes y 1 tarjeta en pantallas pequeñas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 sm:px-0">
+          {projects.map(({ id, src, title, description, demo, code }) => (
             <motion.div
               key={id}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: id * 0.2 }}
-              className="shadow-md shadow-gray-600 rounded-lg bg-white dark:bg-gray-800 p-4 flex flex-col mx-2" // Añadido mx-2 para separación
+              className="shadow-md shadow-gray-600 rounded-lg overflow-hidden relative group h-64 md:h-80"
             >
               <img
                 src={src}
                 alt={`project ${id}`}
-                className="rounded-md mb-2 duration-200 hover:scale-105"
-                style={{ width: '100%', height: '150px', objectFit: 'cover' }}
+                className="w-full h-full object-cover"
               />
-              
-              <p className="text-sm mb-2">{description}</p>
-
-              <div className="flex items-center justify-between mt-2 space-x-2">
-                <a
-                  href={demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 px-2 py-1 text-center duration-200 hover:scale-105 text-gray-900 dark:text-white border border-gray-500 rounded text-xs"
-                >
-                  {t.demo}
-                </a>
-                <a
-                  href={code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 px-2 py-1 text-center duration-200 hover:scale-105 text-gray-900 dark:text-white border border-gray-500 rounded text-xs"
-                >
-                  {t.code}
-                </a>
+              <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+                <p className="text-sm mb-4 text-gray-300 line-clamp-2">{description}</p>
+                <div className="flex justify-end space-x-2">
+                  {demo && (
+                    <a
+                      href={demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 text-xs bg-cyan-500 text-white rounded hover:bg-cyan-600 transition duration-300 flex items-center"
+                    >
+                      <FaExternalLinkAlt className="mr-2" /> {t.demo}
+                    </a>
+                  )}
+                  {code && (
+                    <a
+                      href={code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 text-xs bg-gray-700 text-white rounded hover:bg-gray-800 transition duration-300 flex items-center"
+                    >
+                      <FaGithub className="mr-2" /> {t.code}
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
-        </Slider>
+        </div>
+
+        {/* Carta general para invitar a ver más en GitHub */}
+        <div className="mt-8 p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg text-center">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            {language === 'es' ? "¿Quieres ver más proyectos?" : "Want to see more projects?"}
+          </h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            {language === 'es' ? "Si estás interesado en explorar más de las cosas que he construido, te invito a visitar mi perfil de GitHub, donde podrás encontrar otros proyectos y colaboraciones en los que he trabajado." : "If you're interested in exploring more of what I've built, I invite you to visit my GitHub profile, where you can find other projects and collaborations I've worked on."}
+          </p>
+          <a
+            href="https://github.com/kelok3rik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2 bg-cyan-500 text-white font-semibold rounded hover:bg-cyan-600 transition duration-300"
+          >
+            {language === 'es' ? "Ver GitHub" : "View GitHub"}
+          </a>
+        </div>
       </div>
     </div>
   );

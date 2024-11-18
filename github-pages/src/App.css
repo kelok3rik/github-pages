@@ -1,3 +1,4 @@
+/* Estilos generales */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -11,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -35,8 +38,36 @@
 
 .card {
   padding: 2em;
+  margin-bottom: 2rem;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Ajustar tamaño del texto en los títulos */
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.25rem; /* Reducir tamaño de los títulos */
+    margin-bottom: 0.5rem; /* Aumentar espacio debajo de los títulos */
+  }
+
+  /* Ajustar tamaño del texto en párrafos */
+  p {
+    font-size: 1rem; /* Tamaño de texto en párrafos */
+    line-height: 1.5; /* Mejorar espacio entre líneas para legibilidad */
+    margin-bottom: 1rem; /* Aumentar margen inferior para evitar amontonamiento */
+  }
+
+  /* Ajustar márgenes de los contenedores de texto */
+  .card, .content {
+    margin: 1rem 0; /* Aumentar espacio entre tarjetas o contenedores */
+    padding: 1rem; /* Espacio interno ajustado */
+  }
+
+  /* Ajustar la altura del logo para móviles */
+  .logo {
+    height: 4em; /* Reducir tamaño del logo en móviles */
+  }
 }
